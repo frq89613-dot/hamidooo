@@ -47,7 +47,7 @@ const Navbar = () => {
             <span className="text-primary font-bold text-xl leading-none">S</span>
           </div>
           <span className="font-bold text-xl tracking-tight hidden sm:block">
-            web<span className="text-primary">Tools</span>
+            web<span className="text-primary">.Tools</span>
           </span>
         </a>
 

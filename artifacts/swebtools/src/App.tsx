@@ -1,19 +1,25 @@
-import { ThemeProvider } from "./components/ThemeProvider";
-import { LocaleProvider } from "./i18n/LocaleProvider";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import WorkflowBrain from "./components/WorkflowBrain";
-import TechStack from "./components/TechStack";
-import Performance from "./components/Performance";
-import PortfolioShowcase from "./components/PortfolioShowcase";
-import CaseStudies from "./components/CaseStudies";
-import WorkflowShowcase from "./components/WorkflowShowcase";
-import AgentsShowcase from "./components/AgentsShowcase";
-import MetricsSection from "./components/MetricsSection";
-import Testimonials from "./components/Testimonials";
-import Stats from "./components/Stats";
-import Footer from "./components/Footer";
+import { lazy, Suspense } from 'react';
+import { ThemeProvider } from './components/ThemeProvider';
+import { LocaleProvider } from './i18n/LocaleProvider';
+
+// Above-fold — eager
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+
+// Below-fold — lazy (code-split for faster initial load)
+const Services = lazy(() => import('./components/Services'));
+const WorkflowBrain = lazy(() => import('./components/WorkflowBrain'));
+const TechStack = lazy(() => import('./components/TechStack'));
+const Performance = lazy(() => import('./components/Performance'));
+const Stats = lazy(() => import('./components/Stats'));
+const PortfolioShowcase = lazy(() => import('./components/PortfolioShowcase'));
+const CaseStudies = lazy(() => import('./components/CaseStudies'));
+const WorkflowShowcase = lazy(() => import('./components/WorkflowShowcase'));
+const AgentsShowcase = lazy(() => import('./components/AgentsShowcase'));
+const MetricsSection = lazy(() => import('./components/MetricsSection'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const ContactForm = lazy(() => import('./components/ContactForm'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function Home() {
   return (
@@ -21,19 +27,24 @@ function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <WorkflowBrain />
-        <TechStack />
-        <Performance />
-        <Stats />
-        <PortfolioShowcase />
-        <CaseStudies />
-        <WorkflowShowcase />
-        <AgentsShowcase />
-        <MetricsSection />
-        <Testimonials />
+        <Suspense fallback={null}>
+          <Services />
+          <WorkflowBrain />
+          <TechStack />
+          <Performance />
+          <Stats />
+          <PortfolioShowcase />
+          <CaseStudies />
+          <WorkflowShowcase />
+          <AgentsShowcase />
+          <MetricsSection />
+          <Testimonials />
+          <ContactForm />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

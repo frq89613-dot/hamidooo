@@ -1,152 +1,148 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
-import { SiN8N, SiPython, SiSupabase, SiTwilio, SiStripe, SiHubspot, SiNotion, SiIntercom, SiMixpanel } from 'react-icons/si';
+import { ArrowUpRight, Zap } from 'lucide-react';
 
 const projects = [
   {
     name: 'ShopMind AI',
     category: 'E-commerce',
-    problem: '34% cart abandon, 2000+ manual tickets/day.',
-    metrics: ['Cart abandonment -41%', 'Revenue +2.3M EUR/yr', 'Support costs -67%'],
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=75',
+    problem: '34% cart abandonment, 2,000+ manual tickets per day, disconnected sales pipeline.',
+    metrics: ['Cart abandonment −41%', 'Revenue +€2.3M / yr', 'Support costs −67%'],
     systems: 7,
-    accent: 'green',
-    stack: [SiN8N, SiSupabase],
-    nodes: [
-      { x: 20, y: 50 }, { x: 80, y: 20 }, { x: 140, y: 80 }, { x: 200, y: 50 }
-    ]
+    accent: '#00ff88',
+    tags: ['n8n', 'Supabase', 'Groq'],
   },
   {
     name: 'MediFlow',
     category: 'Healthcare',
-    problem: '4h/day scheduling, 23% missed follow-ups.',
-    metrics: ['No-show -58%', '240h/month saved', 'Insurance 2 days to 15min'],
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=75',
+    problem: '4h / day on scheduling, 23% missed follow-ups, 2-day insurance prep cycle.',
+    metrics: ['No-show rate −58%', '240h saved / month', 'Insurance: 2 days → 15 min'],
     systems: 12,
-    accent: 'blue',
-    stack: [SiN8N, SiPython, SiSupabase, SiTwilio],
-    nodes: [
-      { x: 20, y: 30 }, { x: 80, y: 80 }, { x: 140, y: 20 }, { x: 200, y: 60 }
-    ]
+    accent: '#38bdf8',
+    tags: ['n8n', 'Python', 'Twilio'],
   },
   {
     name: 'SupportOS',
     category: 'Customer Support',
-    problem: '18h response time, 40% simple FAQ tickets.',
-    metrics: ['First response 18h to 47sec', 'CSAT 3.2 to 4.8', '62% ticket deflection'],
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=75',
+    problem: '18h average response time, 40% simple FAQ tickets, rising agent burnout.',
+    metrics: ['Response 18h → 47 sec', 'CSAT 3.2 → 4.8', 'Ticket deflection +62%'],
     systems: 8,
-    accent: 'purple',
-    stack: [SiN8N, SiIntercom, SiNotion],
-    nodes: [
-      { x: 20, y: 80 }, { x: 80, y: 20 }, { x: 140, y: 80 }, { x: 200, y: 20 }
-    ]
+    accent: '#a78bfa',
+    tags: ['n8n', 'Intercom', 'Notion'],
   },
   {
     name: 'LeadForge',
     category: 'Marketing Automation',
-    problem: '0.3% email reply rate, no lead scoring.',
-    metrics: ['Reply rate 0.3% to 4.7%', 'Qualified leads +340%', 'Campaign time 40h to 3h'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75',
+    problem: '0.3% email reply rate, zero lead scoring, 40h per campaign build.',
+    metrics: ['Reply rate 0.3% → 4.7%', 'Qualified leads +340%', 'Campaign time −92%'],
     systems: 6,
-    accent: 'orange',
-    stack: [SiN8N, SiHubspot],
-    nodes: [
-      { x: 20, y: 50 }, { x: 80, y: 50 }, { x: 140, y: 20 }, { x: 200, y: 80 }
-    ]
+    accent: '#fb923c',
+    tags: ['n8n', 'HubSpot', 'GPT-4o'],
   },
   {
     name: 'EstateIQ',
     category: 'Real Estate',
-    problem: '60% time on lead qual, zero automated follow-up.',
-    metrics: ['Lead qualify instant', 'Agent productivity +89%', 'Lead-to-showing +156%'],
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=75',
+    problem: '60% of agent time on lead qualification, zero automated follow-up sequence.',
+    metrics: ['Lead qualify: instant', 'Agent productivity +89%', 'Lead-to-showing +156%'],
     systems: 9,
-    accent: 'teal',
-    stack: [SiN8N, SiPython, SiSupabase],
-    nodes: [
-      { x: 20, y: 20 }, { x: 80, y: 80 }, { x: 140, y: 50 }, { x: 200, y: 50 }
-    ]
+    accent: '#2dd4bf',
+    tags: ['n8n', 'Python', 'Supabase'],
   },
   {
     name: 'ScaleOS',
     category: 'SaaS Platform',
-    problem: '2.1% trial conversion, 3 week manual onboarding.',
-    metrics: ['Trial-to-paid 2.1% to 8.7%', 'Churn -44%', 'MRR +340K EUR/yr'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75',
+    problem: '2.1% trial-to-paid conversion, 3-week manual onboarding, high early churn.',
+    metrics: ['Trial-to-paid 2.1% → 8.7%', 'Churn −44%', 'MRR +€340K / yr'],
     systems: 11,
-    accent: 'pink',
-    stack: [SiN8N, SiStripe, SiMixpanel],
-    nodes: [
-      { x: 20, y: 60 }, { x: 80, y: 30 }, { x: 140, y: 70 }, { x: 200, y: 40 }
-    ]
-  }
+    accent: '#f472b6',
+    tags: ['n8n', 'Stripe', 'Mixpanel'],
+  },
 ];
 
 const PortfolioShowcase = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="portfolio" className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-16">
+          <div className="text-xs font-mono uppercase tracking-widest text-primary mb-4">Case Portfolio</div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Transformation Stories</h2>
-          <p className="text-xl text-muted-foreground">Real businesses. Real automations. Measurable results.</p>
+          <p className="text-xl text-muted-foreground max-w-2xl">
+            Real businesses. Real automations. Measurable results.
+          </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover="hover"
-              viewport={{ once: true }}
-              className="bg-card border border-border rounded-2xl overflow-hidden relative group"
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="group relative rounded-2xl overflow-hidden border border-border bg-card"
             >
-              <div className="h-40 bg-muted/20 relative overflow-hidden border-b border-border p-6 flex items-center justify-center">
-                <svg viewBox="0 0 220 100" className="w-full max-w-sm h-full" preserveAspectRatio="xMidYMid meet">
-                  <path
-                    d={`M ${project.nodes[0].x} ${project.nodes[0].y} L ${project.nodes[1].x} ${project.nodes[1].y} L ${project.nodes[2].x} ${project.nodes[2].y} L ${project.nodes[3].x} ${project.nodes[3].y}`}
-                    fill="none"
-                    stroke="currentColor"
-                    className="text-muted-foreground opacity-20"
-                    strokeWidth="2"
-                    strokeDasharray="4 4"
-                  />
-                  {project.nodes.map((n, i) => (
-                    <circle key={i} cx={n.x} cy={n.y} r="6" className={`fill-${project.accent}-500`} opacity="0.5" />
-                  ))}
-                  {project.nodes.map((n, i) => (
-                    <circle key={`inner-${i}`} cx={n.x} cy={n.y} r="3" className="fill-foreground" />
-                  ))}
-                </svg>
-              </div>
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <div className="text-xs font-mono text-primary mb-2 uppercase tracking-wider">{project.category}</div>
-                    <h3 className="text-2xl font-bold">{project.name}</h3>
-                  </div>
-                  <div className="text-xs px-3 py-1 bg-muted rounded-full border border-border whitespace-nowrap">
-                    {project.systems} Systems
-                  </div>
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+                <div
+                  className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                  style={{ background: `radial-gradient(ellipse at 70% 50%, ${project.accent}40, transparent 70%)` }}
+                />
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <span
+                    className="text-xs font-mono px-2.5 py-1 rounded-full border backdrop-blur-sm"
+                    style={{ color: project.accent, borderColor: `${project.accent}40`, background: `${project.accent}15` }}
+                  >
+                    {project.category}
+                  </span>
                 </div>
-                <p className="text-muted-foreground mb-6 line-clamp-2">{project.problem}</p>
-                <motion.div
-                  variants={{
-                    hover: { height: 'auto', opacity: 1, marginTop: '1rem' },
-                  }}
-                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                  className="overflow-hidden"
-                >
-                  <div className="space-y-2 mb-6">
-                    {project.metrics.map((m, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm font-medium">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        {m}
-                      </div>
+                <div className="absolute top-4 right-4">
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-black/50 border border-white/10 backdrop-blur-sm text-white/70">
+                    <Zap className="w-3 h-3 inline mr-1" style={{ color: project.accent }} />
+                    {project.systems} systems
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-7">
+                <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
+                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{project.problem}</p>
+
+                <div className="space-y-2 mb-6">
+                  {project.metrics.map((m, i) => (
+                    <div key={i} className="flex items-center gap-2.5 text-sm font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: project.accent }} />
+                      <span>{m}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="text-xs px-2.5 py-1 rounded-md bg-muted/60 text-muted-foreground border border-border">
+                        {tag}
+                      </span>
                     ))}
                   </div>
-                  <button className="flex items-center gap-2 text-sm font-semibold hover:text-primary transition-colors">
-                    View Case Study <ArrowUpRight className="w-4 h-4" />
+                  <button
+                    className="flex items-center gap-1.5 text-sm font-semibold transition-colors"
+                    style={{ color: project.accent }}
+                  >
+                    Details <ArrowUpRight className="w-4 h-4" />
                   </button>
-                </motion.div>
-                <div className="absolute bottom-6 right-8 flex gap-2">
-                  {project.stack.map((Icon, i) => (
-                    <Icon key={i} className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
-                  ))}
                 </div>
               </div>
             </motion.div>

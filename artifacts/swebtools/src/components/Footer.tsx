@@ -13,7 +13,7 @@ const Footer = () => {
                 <span className="text-primary font-bold text-xl leading-none">S</span>
               </div>
               <span className="font-bold text-xl tracking-tight">
-                web<span className="text-primary">Tools</span>
+                web<span className="text-primary">.Tools</span>
               </span>
             </a>
             <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} SwebTools. {t('footer.rights')}</p>
+          <p>© {new Date().getFullYear()} Sweb.Tools. {t('footer.rights')}</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground transition-colors">{t('footer.privacy')}</a>
             <a href="#" className="hover:text-foreground transition-colors">{t('footer.terms')}</a>
