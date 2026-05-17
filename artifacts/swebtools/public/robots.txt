@@ -1,2 +1,15 @@
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://swebtools.com/sitemap.xml
+
+# Supported locale paths
+Allow: /en
+Allow: /ar
+Allow: /tr
+Allow: /ru
+
+# Block dev/build artifacts
+Disallow: /src/
+Disallow: /.vite/

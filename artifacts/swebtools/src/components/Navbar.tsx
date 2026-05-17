@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
+import { useTranslation } from 'react-i18next';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,10 +24,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Tech Stack', href: '#tech' },
-    { name: 'Stats', href: '#stats' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.portfolio'), href: '#portfolio' },
+    { name: t('nav.techStack'), href: '#tech' },
+    { name: t('nav.stats'), href: '#stats' },
   ];
 
   return (
@@ -49,11 +52,11 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-6">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
@@ -61,61 +64,69 @@ const Navbar = () => {
               </a>
             ))}
           </div>
-          
-          <div className="flex items-center gap-4 border-l border-border pl-4">
+
+          <div className="flex items-center gap-3 border-s border-border ps-4">
+            <LanguageSwitcher />
+
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-muted transition-colors relative overflow-hidden flex items-center justify-center w-10 h-10"
+              className="p-2 rounded-full hover:bg-muted transition-colors relative overflow-hidden flex items-center justify-center w-9 h-9"
               aria-label="Toggle theme"
+              data-testid="button-toggle-theme"
             >
               <AnimatePresence mode="wait">
                 {theme === 'dark' ? (
                   <motion.div
                     key="moon"
-                    initial={{ y: -20, opacity: 0 }}
+                    initial={{ y: -16, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 20, opacity: 0 }}
+                    exit={{ y: 16, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     className="absolute"
                   >
-                    <Moon className="w-5 h-5 text-secondary" />
+                    <Moon className="w-4 h-4 text-secondary" />
                   </motion.div>
                 ) : (
                   <motion.div
                     key="sun"
-                    initial={{ y: -20, opacity: 0 }}
+                    initial={{ y: -16, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 20, opacity: 0 }}
+                    exit={{ y: 16, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     className="absolute"
                   >
-                    <Sun className="w-5 h-5 text-primary" />
+                    <Sun className="w-4 h-4 text-primary" />
                   </motion.div>
                 )}
               </AnimatePresence>
             </button>
+
             <a
               href="#contact"
               className="px-4 py-2 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(0,255,136,0.3)] transition-all font-medium text-sm"
+              data-testid="link-contact"
             >
-              Contact Us
+              {t('nav.contact')}
             </a>
           </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-4 md:hidden">
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-muted transition-colors"
+            aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            {theme === 'dark' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-foreground"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
@@ -129,10 +140,10 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-b border-border bg-background/95 backdrop-blur-md overflow-hidden"
           >
-            <div className="flex flex-col p-4 gap-4">
+            <div className="flex flex-col p-4 gap-3">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-base font-medium p-2 hover:bg-muted rounded-md transition-colors"
@@ -143,9 +154,9 @@ const Navbar = () => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-center mt-2 px-4 py-3 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 font-medium"
+                className="text-center mt-1 px-4 py-3 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 font-medium"
               >
-                Contact Us
+                {t('nav.contact')}
               </a>
             </div>
           </motion.div>

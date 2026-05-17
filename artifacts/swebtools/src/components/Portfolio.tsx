@@ -1,64 +1,44 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const projects = [
-  {
-    title: "FinTech Dashboard",
-    category: "Data Visualization",
-    image: "/project-1.png"
-  },
-  {
-    title: "Aura Commerce",
-    category: "AI E-commerce",
-    image: "/project-2.png"
-  },
-  {
-    title: "OpsFlow Network",
-    category: "Automation Pipeline",
-    image: "/project-3.png"
-  },
-  {
-    title: "RankAI",
-    category: "SEO Analytics",
-    image: "/project-4.png"
-  }
-];
+const projectImages = ['/project-1.png', '/project-2.png', '/project-3.png', '/project-4.png'];
 
 const Portfolio = () => {
+  const { t } = useTranslation();
+  const projects = t('portfolio.projects', { returnObjects: true }) as Array<{ title: string; category: string }>;
+
   return (
     <section id="portfolio" className="py-24 bg-background relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Featured Work</h2>
-            <p className="text-muted-foreground text-lg">
-              We don't just talk about the future. We build it. Explore our recent deployments for forward-thinking brands.
-            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('portfolio.sectionTitle')}</h2>
+            <p className="text-muted-foreground text-lg">{t('portfolio.sectionSubtitle')}</p>
           </div>
           <a href="#" className="flex items-center gap-2 text-primary font-semibold hover:underline">
-            View All Projects <ArrowUpRight className="w-5 h-5" />
+            {t('portfolio.viewAll')} <ArrowUpRight className="w-5 h-5" />
           </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
             <motion.div
-              key={project.title}
+              key={i}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="group relative rounded-2xl overflow-hidden bg-card border border-border aspect-[4/3] block"
+              data-testid={`card-project-${i}`}
             >
-              <img 
-                src={project.image} 
-                alt={project.title} 
+              <img
+                src={projectImages[i]}
+                alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300" />
-              
               <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                 <span className="text-primary font-mono text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                   {project.category}

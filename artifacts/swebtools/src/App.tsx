@@ -1,4 +1,5 @@
 import { ThemeProvider } from "./components/ThemeProvider";
+import { LocaleProvider } from "./i18n/LocaleProvider";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -30,7 +31,9 @@ function Home() {
 function App() {
   return (
     <ThemeProvider defaultTheme="dark">
-      <Home />
+      <LocaleProvider>
+        <Home />
+      </LocaleProvider>
     </ThemeProvider>
   );
 }

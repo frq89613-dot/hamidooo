@@ -1,0 +1,166 @@
+You are a senior UI/UX engineer and modern SaaS frontend designer.
+
+I want you to redesign and enhance my current Next.js website into a premium AI SaaS experience similar to Vercel, Stripe, Linear, and modern AI startups.
+
+Main goals:
+
+* Modern premium UI
+* Smooth animations
+* Better UX
+* Strong SEO/GEO optimization
+* High conversion rate
+* Scalable architecture
+* Ready for n8n AI automation integrations
+
+Tech stack:
+
+* Next.js 15 App Router
+* Tailwind CSS
+* shadcn/ui
+* Framer Motion
+* TypeScript
+
+IMPORTANT:
+Keep the current structure and functionality, but dramatically improve the visual quality and professional feel.
+
+---
+
+## DESIGN IMPROVEMENTS
+
+1. Improve the Hero Section
+
+* Create a stronger visual identity
+* Add a more powerful headline and CTA
+* Add premium gradients and glow effects
+* Add depth using layered backgrounds
+* Add animated particles or subtle motion
+* Make the first screen feel cinematic and modern
+
+2. Improve Typography
+
+* Use premium fonts like Inter, Satoshi, or General Sans
+* Better font hierarchy
+* Improve spacing and readability
+* Increase visual clarity
+
+3. Add Smooth Modern Animations
+   Use Framer Motion professionally:
+
+* smooth fade-ins
+* stagger animations
+* spring transitions
+* hover effects
+* scroll reveal effects
+* animated gradients
+* animated cards
+* subtle floating effects
+
+Animations must feel premium and smooth, not excessive.
+
+4. Add Premium Visual Depth
+
+* soft shadows
+* blurred gradients
+* glow effects
+* glassmorphism where appropriate
+* subtle noise texture
+* layered sections
+
+5. Add Interactive Elements
+
+* animated CTA buttons
+* hover interactions
+* cursor effects if elegant
+* smooth section transitions
+
+6. Add Video Background or Motion Visuals
+   If possible:
+
+* Add a lightweight cinematic AI-themed background video
+  OR
+* Add animated abstract AI motion graphics
+
+IMPORTANT:
+
+* Must remain fast and optimized
+* Use lazy loading
+* No heavy performance impact
+
+---
+
+## SEO + GEO OPTIMIZATION (VERY IMPORTANT)
+
+The website MUST be fully optimized for:
+
+* SEO
+* GEO targeting
+* AI search indexing
+* Core Web Vitals
+
+Implement:
+
+* Proper metadata
+* Dynamic meta tags
+* Open Graph tags
+* Structured data (JSON-LD)
+* Sitemap
+* robots.txt
+* semantic HTML
+* accessibility improvements
+* fast loading
+* image optimization
+* clean heading hierarchy
+* schema markup
+
+GEO optimization:
+
+* Detect user region
+* Optimize localized metadata
+* Prepare for multilingual SEO
+
+---
+
+## N8N INTEGRATION PREPARATION
+
+The platform will later connect deeply with n8n AI agents and automation workflows.
+
+Prepare architecture for:
+
+* AI agent integrations
+* webhook handling
+* workflow execution
+* automation dashboards
+* future API integrations
+* scalable backend structure
+
+The design should visually communicate:
+“AI automation platform powered by intelligent workflows.”
+
+---
+
+## MOBILE EXPERIENCE
+
+Mobile experience must feel perfect:
+
+* responsive layouts
+* optimized spacing
+* smooth animations on mobile
+* proper typography scaling
+* touch-friendly UI
+
+---
+
+## FINAL RESULT
+
+The final website should feel:
+
+* futuristic
+* premium
+* trustworthy
+* modern
+* cinematic
+* AI-native
+* startup-level professional
+
+The quality target is:
+Vercel + Stripe + modern AI SaaS aesthetics.
