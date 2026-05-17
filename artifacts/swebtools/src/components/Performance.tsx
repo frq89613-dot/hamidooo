@@ -11,19 +11,18 @@ const Performance = () => {
   const metrics = t('performance.metrics', { returnObjects: true }) as Array<{ label: string; value: string }>;
 
   useEffect(() => {
-    if (isInView) {
-      let current = 0;
-      const interval = setInterval(() => {
-        current += 2;
-        if (current >= 99) {
-          setScore(99);
-          clearInterval(interval);
-        } else {
-          setScore(current);
-        }
-      }, 30);
-      return () => clearInterval(interval);
-    }
+    if (!isInView) return;
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 2;
+      if (current >= 99) {
+        setScore(99);
+        clearInterval(interval);
+      } else {
+        setScore(current);
+      }
+    }, 30);
+    return () => clearInterval(interval);
   }, [isInView]);
 
   return (

@@ -6,7 +6,12 @@ import Services from "./components/Services";
 import WorkflowBrain from "./components/WorkflowBrain";
 import TechStack from "./components/TechStack";
 import Performance from "./components/Performance";
-import Portfolio from "./components/Portfolio";
+import PortfolioShowcase from "./components/PortfolioShowcase";
+import CaseStudies from "./components/CaseStudies";
+import WorkflowShowcase from "./components/WorkflowShowcase";
+import AgentsShowcase from "./components/AgentsShowcase";
+import MetricsSection from "./components/MetricsSection";
+import Testimonials from "./components/Testimonials";
 import Stats from "./components/Stats";
 import Footer from "./components/Footer";
 
@@ -20,8 +25,13 @@ function Home() {
         <WorkflowBrain />
         <TechStack />
         <Performance />
-        <Portfolio />
         <Stats />
+        <PortfolioShowcase />
+        <CaseStudies />
+        <WorkflowShowcase />
+        <AgentsShowcase />
+        <MetricsSection />
+        <Testimonials />
       </main>
       <Footer />
     </div>

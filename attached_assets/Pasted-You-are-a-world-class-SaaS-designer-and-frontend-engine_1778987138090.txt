@@ -1,0 +1,276 @@
+You are a world-class SaaS designer and frontend engineer.
+
+Create an extraordinary futuristic Portfolio / Case Studies section for my AI Automation platform.
+
+The portfolio must NOT feel like a traditional gallery.
+
+It should feel:
+
+* cinematic
+* interactive
+* futuristic
+* intelligent
+* premium
+* AI-native
+* visually unforgettable
+
+The goal is to make visitors instantly think:
+“These people build serious AI automation systems.”
+
+---
+
+## CORE CONCEPT
+
+This is NOT a simple portfolio.
+
+This is an:
+AI Automation Showcase Experience.
+
+The portfolio should showcase:
+
+* AI agents
+* automations
+* n8n workflows
+* intelligent systems
+* integrations
+* business transformations
+* workflow orchestration
+
+The visual identity must strongly communicate:
+“Advanced AI automation ecosystem.”
+
+---
+
+## DESIGN STYLE
+
+Use inspiration from:
+
+* Vercel
+* Stripe
+* Linear
+* Apple product storytelling
+* futuristic AI startups
+
+Style requirements:
+
+* dark premium theme
+* glowing gradients
+* glassmorphism
+* soft shadows
+* cinematic spacing
+* futuristic typography
+* animated backgrounds
+* elegant visual depth
+
+---
+
+## LAYOUT STRUCTURE
+
+Create multiple sections:
+
+1. Featured Case Studies
+2. AI Workflow Showcase
+3. Automation Systems
+4. AI Agent Solutions
+5. Results & Metrics
+6. Client Transformation Stories
+
+---
+
+## FEATURED PROJECT CARDS
+
+Each project card should include:
+
+* project title
+* short summary
+* industry/category
+* technologies used
+* automation complexity
+* business results
+* visual workflow preview
+
+Cards should feel:
+
+* interactive
+* animated
+* alive
+
+Add:
+
+* hover glow
+* animated borders
+* motion transitions
+* layered depth
+* subtle parallax
+
+---
+
+## INTERACTIVE WORKFLOW VISUALS
+
+This is VERY IMPORTANT.
+
+Create animated workflow visuals inspired by:
+
+* n8n
+* AI orchestration systems
+* connected automation pipelines
+
+Include:
+
+* connected nodes
+* flowing lines
+* moving data particles
+* workflow execution animations
+* real-time system feeling
+
+The portfolio should visually communicate:
+“Complex intelligent automations running live.”
+
+---
+
+## CASE STUDY EXPERIENCE
+
+Each case study should open into a premium detailed view.
+
+Include:
+
+* problem
+* solution
+* automation architecture
+* AI agents used
+* workflow explanation
+* before vs after
+* measurable results
+* screenshots or dashboards
+* animated diagrams
+
+Optional:
+
+* terminal-style execution preview
+* live workflow animation
+* AI processing simulation
+
+---
+
+## ANIMATIONS
+
+Use Framer Motion professionally.
+
+Add:
+
+* smooth scroll reveals
+* stagger animations
+* cinematic transitions
+* hover interactions
+* animated gradients
+* floating elements
+* subtle mouse parallax
+* glowing effects
+
+Animations should feel:
+
+* premium
+* smooth
+* intelligent
+* futuristic
+
+NOT excessive.
+
+---
+
+## BACKGROUND EFFECTS
+
+Add subtle AI atmosphere:
+
+* neural network visuals
+* moving particles
+* glowing lines
+* ambient motion
+* abstract AI graphics
+* workflow energy effects
+
+Optional:
+lightweight cinematic AI video backgrounds.
+
+---
+
+## RESULTS & METRICS SECTION
+
+Create a powerful metrics section showing:
+
+* time saved
+* automation efficiency
+* AI response speed
+* cost reduction
+* lead conversion improvements
+* workflow execution stats
+
+Display metrics with:
+
+* animated counters
+* glowing UI
+* futuristic charts
+
+---
+
+## SOCIAL PROOF
+
+Add:
+
+* testimonials
+* trusted by logos
+* client success stories
+* integration partners
+* AI stack badges
+
+The platform should feel established and trusted.
+
+---
+
+## SEO + PERFORMANCE
+
+Very important:
+Maintain:
+
+* excellent SEO
+* semantic HTML
+* fast loading
+* optimized animations
+* Core Web Vitals performance
+* accessibility
+
+Use:
+
+* lazy loading
+* optimized media
+* responsive rendering
+* scalable architecture
+
+---
+
+## MOBILE EXPERIENCE
+
+Mobile must feel equally premium:
+
+* responsive layouts
+* touch-friendly interactions
+* smooth motion
+* optimized animations
+* clean readability
+
+---
+
+## FINAL GOAL
+
+The final portfolio should feel like:
+
+* a million-dollar AI startup
+* futuristic and cinematic
+* highly advanced
+* interactive and immersive
+* visually powerful
+* automation-first
+* deeply intelligent
+
+Users should immediately trust the company and feel:
+“These experts build next-generation AI automation systems.”

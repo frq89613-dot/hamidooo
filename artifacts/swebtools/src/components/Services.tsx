@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Bot, GitMerge, Zap, LineChart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const icons = [Bot, GitMerge, Zap, LineChart];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -12,7 +12,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,

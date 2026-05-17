@@ -1,0 +1,218 @@
+You are a senior AI SaaS designer and frontend engineer.
+
+Analyze my current website and transform it into a world-class futuristic AI automation platform.
+
+The current design is already modern and visually strong, but it still lacks:
+
+* motion
+* storytelling
+* deeper visual identity
+* AI automation feeling
+* premium interaction quality
+* emotional engagement
+
+I want the website to feel like:
+
+* Vercel
+* Stripe
+* Linear
+* modern AI startups
+* cinematic futuristic SaaS
+
+IMPORTANT:
+Do NOT redesign everything from scratch.
+Keep the existing aesthetic and structure, but significantly upgrade the experience, interactions, and brand feeling.
+
+---
+
+## MAIN IMPROVEMENTS REQUIRED
+
+1. MAKE THE WEBSITE FEEL ALIVE
+   The current UI looks beautiful but feels too static.
+
+Add:
+
+* smooth motion
+* subtle floating effects
+* animated gradients
+* animated glow effects
+* scroll-based animations
+* smooth transitions
+* stagger animations
+* micro-interactions
+* elegant hover effects
+
+Use Framer Motion professionally.
+
+Animations must feel premium and smooth, NOT excessive or distracting.
+
+---
+
+2. ADD AI AUTOMATION VISUAL IDENTITY
+
+---
+
+The platform is based around:
+
+* AI agents
+* automations
+* workflows
+* n8n integrations
+* intelligent systems
+
+The design MUST visually communicate this.
+
+Add:
+
+* animated workflow visuals
+* connected nodes
+* flowing lines
+* automation pipelines
+* AI network feeling
+* intelligent system aesthetics
+
+The user should instantly understand:
+“This is an AI automation ecosystem.”
+
+---
+
+3. ADD CINEMATIC BACKGROUND EFFECTS
+
+---
+
+Add subtle futuristic background visuals:
+
+* moving particles
+* neural network effects
+* abstract AI motion graphics
+* soft glowing animated gradients
+* floating lights
+
+Optional:
+Add lightweight cinematic AI-themed video backgrounds.
+
+IMPORTANT:
+Everything must remain optimized and performant.
+
+---
+
+4. IMPROVE STORYTELLING
+
+---
+
+The website should guide users emotionally through scrolling.
+
+The flow should create:
+
+1. curiosity
+2. excitement
+3. understanding
+4. trust
+5. desire to try the platform
+
+Improve section transitions and narrative structure.
+
+---
+
+5. ADD INTERACTIVE ELEMENTS
+
+---
+
+Add premium interactions like:
+
+* mouse parallax
+* animated cards
+* glowing CTA buttons
+* hover depth effects
+* animated workflow diagrams
+* animated terminal/demo sections
+* smooth section reveals
+
+---
+
+6. ADD SOCIAL PROOF
+
+---
+
+Add believable SaaS trust elements:
+
+* statistics
+* usage numbers
+* testimonials
+* company logos
+* “trusted by” sections
+* automation metrics
+
+Make the platform feel established and real.
+
+---
+
+7. ADD A VISUAL AI WORKFLOW SECTION
+
+---
+
+Create a dedicated section showing:
+
+* AI agents
+* workflow execution
+* automation chains
+* connected systems
+* real-time processing feel
+
+This section should visually resemble:
+n8n + futuristic AI orchestration.
+
+---
+
+8. SEO + PERFORMANCE (VERY IMPORTANT)
+
+---
+
+The website must remain:
+
+* fast
+* SEO optimized
+* accessible
+* scalable
+
+Implement:
+
+* semantic HTML
+* optimized animations
+* lazy loading
+* image optimization
+* clean heading hierarchy
+* structured metadata
+* Core Web Vitals optimization
+
+---
+
+9. MOBILE EXPERIENCE
+
+---
+
+Mobile must feel equally premium:
+
+* smooth animations
+* optimized layouts
+* responsive motion
+* touch-friendly interactions
+* clean typography scaling
+
+---
+
+## FINAL GOAL
+
+The final result should feel like:
+
+* a real AI startup
+* futuristic
+* cinematic
+* intelligent
+* interactive
+* premium
+* automation-first
+* visually unforgettable
+
+The user should feel:
+“This platform is powerful, advanced, and next-generation.”
