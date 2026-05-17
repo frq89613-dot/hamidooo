@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "o1Uf8ejdDAMSuBE6Cq8iL"
+uri = "file://artifacts/swebtools/public/project-1.png"
+type = "image"
+title = "Dashboard visualization"
+
+[[generated]]
+id = "SMr3aV6zd8PveS56bWGlL"
+uri = "file://artifacts/swebtools/public/project-2.png"
+type = "image"
+title = "E-commerce platform"
+
+[[generated]]
+id = "U7-uwhwpDEzoQwIFokZdt"
+uri = "file://artifacts/swebtools/public/project-3.png"
+type = "image"
+title = "Workflow automation"
+
+[[generated]]
+id = "v6S0JcAnV-0oJeT318tMi"
+uri = "file://artifacts/swebtools/public/project-4.png"
+type = "image"
+title = "SEO analytics"

@@ -1,0 +1,29 @@
+SwebTools: The Interactive Roadmap & Tech Stack
+1. The Hero Section (The "WOW" Factor)
+Visual Action: "Don't just use a static background. Implement an Interactive Particle Field that reacts to mouse movement. As the user hovers, the particles should form neural network connections (nodes and lines)."
+
+The Robot Element: "Integrate a 3D Lottie Animation of a futuristic robot arm 'assembling' the SwebTools logo in real-time as the page loads."
+
+Micro-interaction: "Add a 'Glitch Effect' on the main headline (Next-Gen AI Automation) that triggers every 5 seconds to give a cyberpunk/high-tech vibe."
+
+2. Dynamic Service Cards (The Action)
+Hover State: "When a user hovers over a service card (e.g., AI E-commerce Agents), the card should 'glow' with a Neon Cyan border and the icon should perform a unique animation (e.g., the robot eye blinks or gears start turning)."
+
+Content Reveal: "Use a Staggered Reveal animation. When the user scrolls down, the services shouldn't just appear; they should slide in from the side with a 'bounce' effect."
+
+3. The "n8n Brain" Visualization
+Live Flow: "Instead of just mentioning n8n, create a small visual area that looks like an Active Workflow. Use moving light dots (data packets) traveling between icons (Store -> AI Agent -> Database) to show how the automation actually moves."
+
+4. Technical Specification (The Modern Stack)
+Floating Tech Icons: "Display the tech stack (Next.js, Supabase, Groq) as floating 3D badges that subtly bob up and down."
+
+Speed Meter: "Next to the Performance section, add a Live Speed Gauge that animates from 0 to 99 to visually represent our 95+ PageSpeed target."
+
+5. Advanced Directives for the Developer (The "Action" Instructions):
+Framer Motion Integration: "Use Framer Motion for all transitions. Every button click and page scroll must have a smooth, spring-based motion. No sharp or boring transitions."
+
+Glassmorphism: "Apply a Glassmorphism effect (blurred transparent backgrounds) to all dashboards and pop-ups to make the UI feel deep and multi-layered."
+
+Scroll-Triggered Animations: "Implement ScrollReveal. Elements should only come to life (fade in, scale up) exactly when they enter the user's viewport."
+
+Dark/Light Toggle: "Add a custom-animated toggle switch for Dark Mode that changes the entire site's energy from 'Deep Space Blue' to 'Clean Lab White' with a smooth sweep effect."

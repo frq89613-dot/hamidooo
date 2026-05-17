@@ -1,0 +1,51 @@
+Certainly! Here is the complete list of technical requirements and the project roadmap in English, formatted for you to copy and send directly.
+
+### **Project Tech Stack**
+
+* **Frontend:** Next.js 15+ (App Router)
+* **Styling:** Tailwind CSS + Shadcn/ui
+* **AI Integration:** Vercel AI SDK
+* **Automation Brain:** n8n (Self-Hosted via Docker)
+* **Orchestration:** Flowise / LangChain
+* **Database & Vector Store:** Supabase (PostgreSQL)
+* **Inference Speed:** Groq Cloud API
+* **Deployment:** Coolify on VPS
+* **Email Service:** Resend
+* **Monetization:** Whop / Stripe
+
+---
+
+### **Execution Phase Requests**
+
+#### **Phase 1: UI/UX Design**
+
+* "Convert the current wireframe into a High-Fidelity UI design using Figma. Focus on a modern **Dark Mode** aesthetic with high-tech accents (Neon Blue/Cyan)."
+* "Create a consistent Design System for buttons, inputs, and cards to ensure a seamless user experience across the dashboard."
+
+#### **Phase 2: Core Development**
+
+* "Develop the frontend using **Next.js 15** and **Tailwind CSS**, utilizing **Shadcn/ui** for all interactive components."
+* "Set up **Supabase** as the backend for user data, and implement secure Authentication (Auth)."
+* "Integrate **Vercel AI SDK** to build real-time chat interfaces for our AI Agent services."
+
+#### **Phase 3: Automation & AI Integration**
+
+* "Deploy a self-hosted **n8n** instance via **Coolify** and connect it to the web app using Webhooks."
+* "Build automated workflows that link user inputs to AI Agents powered by **Groq API** for ultra-fast inference and response times."
+
+#### **Phase 4: SEO Optimization**
+
+* "Implement **Server-Side Rendering (SSR)** and dynamic **Metadata** for all service pages to ensure instant indexing by search engines."
+* "Add **JSON-LD Schema** markup to define our services as AI and Automation solutions for Google's rich snippets."
+
+#### **Phase 5: Speed & Performance Tuning**
+
+* "Optimize all assets using `next/image` and convert images to **WebP** format."
+* "Ensure a **95+ Score** on **Google PageSpeed Insights** by implementing Edge Caching and code splitting."
+* "Minimize First Contentful Paint (FCP) and ensure the site is fully optimized for mobile devices."
+
+---
+
+### **Final Instruction for the Developer:**
+
+> "Please provide technical documentation for the integration between **Next.js** and **n8n**, ensuring that the system is modular and easy to scale as we add more AI Agents in the future."
