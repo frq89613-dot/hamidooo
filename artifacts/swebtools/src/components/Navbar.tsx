@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'wouter';
 import { useTheme } from './ThemeProvider';
 import { useTranslation } from 'react-i18next';
 import { Sun, Moon, Menu, X } from 'lucide-react';
@@ -10,6 +11,8 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const { t } = useTranslation();
+  const [location] = useLocation();
+  const isHome = location === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +27,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.portfolio'), href: '#portfolio' },
-    { name: t('nav.techStack'), href: '#tech' },
-    { name: t('nav.stats'), href: '#stats' },
+    { name: t('nav.services'), href: isHome ? '#services' : '/services', route: '/services' },
+    { name: t('nav.portfolio'), href: isHome ? '#portfolio' : '/portfolio', route: '/portfolio' },
+    { name: 'Pricing', href: '/pricing', route: '/pricing' },
+    { name: t('nav.techStack'), href: isHome ? '#tech' : '/#tech', route: '/' },
   ];
 
   return (
@@ -42,27 +45,40 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 overflow-hidden group-hover:border-primary/50 transition-colors">
             <span className="text-primary font-bold text-xl leading-none">S</span>
           </div>
           <span className="font-bold text-xl tracking-tight hidden sm:block">
             web<span className="text-primary">.Tools</span>
           </span>
-        </a>
+        </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
           <div className="flex gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith('#') || link.href.startsWith('/#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.route ?? link.href}
+                  className={`text-sm font-medium transition-colors ${
+                    location === link.href
+                      ? 'text-primary'
+                      : 'text-muted-foreground hover:text-primary'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ),
+            )}
           </div>
 
           <div className="flex items-center gap-3 border-s border-border ps-4">
@@ -102,7 +118,7 @@ const Navbar = () => {
             </button>
 
             <a
-              href="#contact"
+              href={isHome ? '#contact' : '/#contact'}
               className="px-4 py-2 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 hover:shadow-[0_0_15px_rgba(0,255,136,0.3)] transition-all font-medium text-sm"
               data-testid="link-contact"
             >
@@ -111,7 +127,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Controls */}
         <div className="flex items-center gap-2 md:hidden">
           <LanguageSwitcher />
           <button
@@ -131,7 +146,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -141,18 +155,29 @@ const Navbar = () => {
             className="md:hidden border-b border-border bg-background/95 backdrop-blur-md overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-medium p-2 hover:bg-muted rounded-md transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.href.startsWith('#') || link.href.startsWith('/#') ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-base font-medium p-2 hover:bg-muted rounded-md transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.route ?? link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-base font-medium p-2 hover:bg-muted rounded-md transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ),
+              )}
               <a
-                href="#contact"
+                href={isHome ? '#contact' : '/#contact'}
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-center mt-1 px-4 py-3 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 font-medium"
               >

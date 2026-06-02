@@ -2,6 +2,29 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Clock, Lock, ArrowRight, Mail, Phone } from 'lucide-react';
 
+// Replace these with your real contact values when ready
+const CONTACT = {
+  EMAIL: 'hamidzakor@gmail.com',
+  // E.164 without plus for WhatsApp wa.me links
+  WHATSAPP_E164: '96398836668',
+  PHONE_TEL: '+96398836668',
+  TELEGRAM_USERNAME: 'yourtelegram',
+};
+
+const WhatsAppIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .102 4.95.003 11.43a11.9 11.9 0 0 0 3.45 8.28L0 24l4.57-2.24A11.9 11.9 0 0 0 12 24c6.627 0 11.998-4.95 12.003-11.43 0-1.98-.45-3.9-1.483-5.4z" fill="#00ff88" opacity="0.08"/>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.768.967-.942 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.884-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.074-.148-.672-1.612-.92-2.206-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.076 4.487 0 0 .268.112.482.168.203.055.395.074.547.05.173-.025.53-.199 1.016-.52.486-.323 1.29-.999 1.47-1.556.186-.556.186-1.03.13-1.129-.049-.099-.198-.148-.396-.297z" fill="#00ff88"/>
+  </svg>
+);
+
+const TelegramIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <path d="M22 2L2 9.5l5.5 2.1L9 22l4-3 4 3 2.5-10.4L22 2z" fill="#00ff88" opacity="0.08"/>
+    <path d="M20.487 3.241s-1.623 6.06-2.417 8.88c-.388 1.383-1.862 6.316-1.862 6.316s-1.59-2.592-2.69-4.287c-1.473-2.176-4.06-5.998-4.06-5.998s7.02-6.61 10.99-5.911z" fill="#00ff88"/>
+  </svg>
+);
+
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
 const WEBHOOK_URL = (import.meta.env as Record<string, string | undefined>)['VITE_N8N_WEBHOOK_URL'];
@@ -159,14 +182,73 @@ const ContactForm = () => {
               ))}
             </div>
 
-            <div className="mt-10 pt-8 border-t border-border flex flex-col gap-3 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>hello@sweb.tools</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+1 (555) 000-0000</span>
+            <div className="mt-10 pt-8 border-t border-border">
+              <div className="max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <a
+                    href={`https://wa.me/${CONTACT.WHATSAPP_E164}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open WhatsApp chat"
+                    className="group flex h-full min-h-[240px] w-full flex-col rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    style={{ boxShadow: '0 20px 60px rgba(0,255,136,0.08)' }}
+                  >
+                    <div className="flex flex-1 flex-col items-center justify-between text-center gap-5">
+                      <div className="space-y-4 w-full">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-black/20 border border-primary/10">
+                          <WhatsAppIcon />
+                        </div>
+                        <div className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground/70">WhatsApp</div>
+                        <div className="mx-auto max-w-full break-words whitespace-normal text-sm font-semibold leading-tight text-foreground">{CONTACT.PHONE_TEL}</div>
+                      </div>
+                      <span className="inline-flex min-w-[120px] items-center justify-center rounded-full border border-[#00ff88]/20 bg-[#00ff88]/10 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-300 group-hover:bg-[#00ff88]/15">
+                        Open chat
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`mailto:${CONTACT.EMAIL}?subject=${encodeURIComponent('Website inquiry')}`}
+                    aria-label="Send email"
+                    className="group flex h-full min-h-[240px] w-full flex-col rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    style={{ boxShadow: '0 20px 60px rgba(0,255,136,0.08)' }}
+                  >
+                    <div className="flex flex-1 flex-col items-center justify-between text-center gap-5">
+                      <div className="space-y-4 w-full">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-black/20 border border-primary/10">
+                          <Mail className="w-6 h-6 text-primary" />
+                        </div>
+                        <div className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground/70">Email</div>
+                        <div className="mx-auto max-w-full break-words whitespace-normal text-sm font-semibold leading-tight text-foreground">{CONTACT.EMAIL}</div>
+                      </div>
+                      <span className="inline-flex min-w-[120px] items-center justify-center rounded-full border border-[#00ff88]/20 bg-[#00ff88]/10 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-300 group-hover:bg-[#00ff88]/15">
+                        Compose message
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`https://t.me/${CONTACT.TELEGRAM_USERNAME}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open Telegram"
+                    className="group flex h-full min-h-[240px] w-full flex-col rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                    style={{ boxShadow: '0 20px 60px rgba(0,255,136,0.08)' }}
+                  >
+                    <div className="flex flex-1 flex-col items-center justify-between text-center gap-5">
+                      <div className="space-y-4 w-full">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-black/20 border border-primary/10">
+                          <TelegramIcon />
+                        </div>
+                        <div className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground/70">Telegram</div>
+                        <div className="mx-auto max-w-full break-words whitespace-normal text-sm font-semibold leading-tight text-foreground">@{CONTACT.TELEGRAM_USERNAME}</div>
+                      </div>
+                      <span className="inline-flex min-w-[120px] items-center justify-center rounded-full border border-[#00ff88]/20 bg-[#00ff88]/10 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-300 group-hover:bg-[#00ff88]/15">
+                        View profile
+                      </span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

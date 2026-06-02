@@ -1,0 +1,4 @@
+config/supabase.json
+public/config/supabase.json
+.env
+.env.local

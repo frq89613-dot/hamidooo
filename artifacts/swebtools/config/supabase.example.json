@@ -1,0 +1,6 @@
+{
+  "url": "https://YOUR_PROJECT_REF.supabase.co",
+  "anonKey": "YOUR_SUPABASE_ANON_KEY",
+  "serviceRoleKey": "YOUR_SUPABASE_SERVICE_ROLE_KEY",
+  "databasePassword": "YOUR_DATABASE_PASSWORD"
+}
