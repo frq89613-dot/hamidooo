@@ -173,7 +173,7 @@ async function main() {
 
   if (!credentialsReady(config)) {
     console.log(
-      "[setup-supabase] Paste your Supabase keys into config/supabase.json, then run: pnpm setup:supabase",
+      "[setup-supabase] Paste your Supabase keys into config/supabase.json, then run: npm setup:supabase",
     );
     if (!publicConfig.url || !publicConfig.anonKey) {
       process.exit(0);

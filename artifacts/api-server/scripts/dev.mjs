@@ -14,5 +14,5 @@ function run(command, args) {
   }
 }
 
-run("pnpm", ["run", "build"]);
-run("pnpm", ["run", "start"]);
+run("npm", ["run", "build"]);
+run("npm", ["run", "start"]);

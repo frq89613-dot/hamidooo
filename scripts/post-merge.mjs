@@ -12,5 +12,5 @@ function run(command, args) {
   }
 }
 
-run("pnpm", ["install", "--frozen-lockfile"]);
-run("pnpm", ["--filter", "db", "push"]);
+run("npm", ["ci"]);
+run("npm", ["--workspace=lib/db", "run", "push"]);

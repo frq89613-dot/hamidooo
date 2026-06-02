@@ -259,7 +259,7 @@ export default function Dashboard() {
                 , then run:
               </p>
               <code className="block rounded bg-muted px-2 py-1 text-xs">
-                pnpm setup:supabase
+                npm setup:supabase
               </code>
               <p className="text-xs">
                 The setup script creates the orders table, seeds sample data,

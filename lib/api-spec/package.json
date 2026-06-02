@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "codegen": "orval --config ./orval.config.ts",
-    "codegen:all": "node ../../scripts/run-seq.mjs pnpm run codegen -- pnpm run codegen:check",
-    "codegen:check": "pnpm -w run typecheck:libs"
+    "codegen:all": "node ../../scripts/run-seq.mjs npm run codegen -- npm run codegen:check",
+    "codegen:check": "npm run typecheck:libs --workspace-root"
   },
   "devDependencies": {
     "orval": "^8.9.1"

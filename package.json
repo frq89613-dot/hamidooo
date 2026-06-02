@@ -2,13 +2,24 @@
   "name": "workspace",
   "version": "0.0.0",
   "license": "MIT",
+  "workspaces": [
+    "artifacts/api-server",
+    "artifacts/mockup-sandbox",
+    "artifacts/swebtools",
+    "lib/api-client-react",
+    "lib/api-spec",
+    "lib/api-zod",
+    "lib/db",
+    "scripts"
+  ],
   "scripts": {
-    "preinstall": "node scripts/preinstall.mjs",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "build": "npm run typecheck && npm run build:all",
+    "build:all": "npm run build --workspace=artifacts/api-server && npm run build --workspace=artifacts/mockup-sandbox && npm run build --workspace=artifacts/swebtools",
     "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
-    "dev": "pnpm --filter @workspace/swebtools dev",
-    "dev:swebtools": "pnpm --filter @workspace/swebtools dev"
+    "typecheck": "npm run typecheck:libs",
+    "dev": "npm --workspace=artifacts/swebtools run dev",
+    "dev:swebtools": "npm --workspace=artifacts/swebtools run dev",
+    "install:all": "npm install && npm install --workspace=artifacts/api-server && npm install --workspace=artifacts/mockup-sandbox && npm install --workspace=artifacts/swebtools && npm install --workspace=lib/api-client-react && npm install --workspace=lib/api-spec && npm install --workspace=lib/api-zod && npm install --workspace=lib/db && npm install --workspace=scripts"
   },
   "private": true,
   "devDependencies": {

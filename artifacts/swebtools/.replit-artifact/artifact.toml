@@ -15,10 +15,10 @@ paths = [ "/" ]
 localPort = 18915
 
 [services.development]
-run = "pnpm --filter @workspace/swebtools run dev"
+run = "npm --workspace=artifacts/swebtools run dev"
 
 [services.production]
-build = [ "pnpm", "--filter", "@workspace/swebtools", "run", "build" ]
+build = [ "npm", "--workspace=artifacts/swebtools", "run", "build" ]
 publicDir = "artifacts/swebtools/dist/public"
 serve = "static"
 
