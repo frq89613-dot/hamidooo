@@ -45,9 +45,13 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-6">{t('footer.contact')}</h4>
             <ul className="flex flex-col gap-4 text-muted-foreground">
-              <li>hello@swebtools.com</li>
-              <li>+1 (555) 000-0000</li>
-              <li>San Francisco, CA</li>
+              <li>
+                <a href="mailto:hamidzakor@gmail.com" className="hover:text-primary transition-colors">hamidzakor@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+963988366684" className="hover:text-primary transition-colors">+963988366684</a>
+              </li>
+              <li>{t('footer.location')}</li>
             </ul>
           </div>
         </div>
