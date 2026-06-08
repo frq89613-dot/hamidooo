@@ -1,30 +1,27 @@
-# Use the official slim Node.js 22 base image
+# Builder stage using Node.js 22 slim
 FROM node:22-slim AS builder
-
-# Create app directory
 WORKDIR /app
 
-# Copy full repository for workspace-aware pnpm install
+# Copy full repository so pnpm can detect the monorepo workspace
 COPY . .
 
-# Install pnpm globally for build and runtime
+# Install pnpm globally for the build
 RUN npm install -g pnpm@latest
 
-# Install all dependencies, including devDependencies for the monorepo
+# Install dependencies for the monorepo workspace
 RUN pnpm install --frozen-lockfile
 
-# Build the target workspace app, disabling typecheck and avoiding build failure on warnings
-RUN pnpm --dir artifacts/swebtools run build --no-typecheck || true
+# Build the frontend app from the swebtools workspace
+RUN pnpm --dir artifacts/swebtools run build
 
-# Final runtime stage
-FROM node:22-slim AS runner
-WORKDIR /app
-RUN npm install -g pnpm@latest
+# Runner stage using Nginx to serve the built static site
+FROM nginx:alpine AS runner
 
-# Copy built app and installed dependencies from the builder stage
-COPY --from=builder /app /app
+# Copy built static files from the builder stage
+COPY --from=builder /app/artifacts/swebtools/dist /usr/share/nginx/html
 
-# Set the runtime working directory to the target app
-WORKDIR /app/artifacts/swebtools
+# Expose HTTP port
+EXPOSE 80
 
-CMD ["pnpm", "start"]
+# Start nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
