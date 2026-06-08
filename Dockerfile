@@ -4,17 +4,14 @@ FROM node:22-slim AS builder
 # Create app directory
 WORKDIR /app
 
-# Install pnpm globally so both build and runtime can use it
+# Copy full repository for workspace-aware pnpm install
+COPY . .
+
+# Install pnpm globally for build and runtime
 RUN npm install -g pnpm@latest
 
-# Copy package metadata first for dependency install caching
-COPY package.json pnpm-lock.yaml ./
-
-# Install all dependencies, including devDependencies, for build in Monorepo mode
-RUN pnpm install --frozen-lockfile --workspace-root --with=dev
-
-# Copy the full repository into the image
-COPY . .
+# Install all dependencies, including devDependencies for the monorepo
+RUN pnpm install --frozen-lockfile
 
 # Build the target workspace app, disabling typecheck and avoiding build failure on warnings
 RUN pnpm --dir artifacts/swebtools run build --no-typecheck || true
@@ -27,7 +24,7 @@ RUN npm install -g pnpm@latest
 # Copy built app and installed dependencies from the builder stage
 COPY --from=builder /app /app
 
-# Make sure runtime starts from the main app package directory
+# Set the runtime working directory to the target app
 WORKDIR /app/artifacts/swebtools
 
 CMD ["pnpm", "start"]
