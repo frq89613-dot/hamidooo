@@ -8,11 +8,14 @@ COPY . .
 # Install pnpm globally for the build
 RUN npm install -g pnpm@latest
 
-# Install dependencies for the monorepo workspace
+# Install dependencies using the root pnpm-lock.yaml inside the monorepo
 RUN pnpm install --frozen-lockfile
 
 # Build the frontend app from the swebtools workspace
 RUN pnpm --dir artifacts/swebtools run build
+
+# Print the dist directory contents for debugging and CI logs
+RUN ls -R /app/artifacts/swebtools/dist
 
 # Runner stage using Nginx to serve the built static site
 FROM nginx:alpine AS runner
