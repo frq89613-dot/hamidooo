@@ -1,5 +1,5 @@
-# Use the official slim Node.js 20 base image
-FROM node:20-slim AS builder
+# Use the official slim Node.js 22 base image
+FROM node:22-slim AS builder
 
 # Create app directory
 WORKDIR /app
@@ -10,7 +10,7 @@ RUN npm install -g pnpm@latest
 # Copy package metadata first for dependency install caching
 COPY package.json pnpm-lock.yaml ./
 
-# Install all dependencies, including devDependencies, for build
+# Install all dependencies, including devDependencies, for build in Monorepo mode
 RUN pnpm install --frozen-lockfile --workspace-root --with=dev
 
 # Copy the full repository into the image
@@ -20,7 +20,7 @@ COPY . .
 RUN pnpm --dir artifacts/swebtools run build --no-typecheck || true
 
 # Final runtime stage
-FROM node:20-slim AS runner
+FROM node:22-slim AS runner
 WORKDIR /app
 RUN npm install -g pnpm@latest
 
