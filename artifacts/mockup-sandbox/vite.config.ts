@@ -41,6 +41,11 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    ssr: false,
+  },
+  // Force pure JavaScript build chain - disable native Rolldown
+  experimental: {
+    withBundledRolldown: false,
   },
   server: {
     port,
