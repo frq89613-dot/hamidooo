@@ -5,14 +5,17 @@ const en = {
     techStack: "Tech Stack",
     stats: "Stats",
     contact: "Contact Us",
+    whyUs: "Why Us",
+    useCases: "Use Cases",
+    caseStudies: "Case Studies",
   },
   hero: {
-    badge: "Systems Online",
-    headline: "Next-Gen AI Automation",
+    badge: "AI Automation Agency",
+    headline: "AI Automation & SaaS Development for Growth-Driven Teams",
     subheadline:
-      "We design, build, and deploy intelligent automation systems that run your business 24/7. Replace manual operations with precision AI agents.",
-    ctaPrimary: "Start Automating",
-    ctaSecondary: "View Our Work",
+      "Sweb.Tools creates AI workflows, chatbots, and SaaS products that accelerate revenue, remove manual bottlenecks, and elevate user experience.",
+    ctaPrimary: "Start Your AI Project",
+    ctaSecondary: "Explore Our Services",
   },
   services: {
     sectionTitle: "Autonomous Solutions",
@@ -97,7 +100,7 @@ const en = {
   },
   footer: {
     tagline:
-      "Next-generation AI Automation & Digital Solutions agency. We build autonomous business systems powered by AI Agents.",
+      "Premium AI automation and SaaS development agency. We build intelligent workflows, chatbots, and high-performance web products for global brands.",
     nav: "Navigation",
     contact: "Contact",
     privacy: "Privacy Policy",

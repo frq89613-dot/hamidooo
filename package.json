@@ -15,6 +15,8 @@
   "scripts": {
     "build": "npm run typecheck && npm run build:all",
     "build:all": "npm run build --workspace=@workspace/api-server && npm run build --workspace=@workspace/mockup-sandbox && npm run build --workspace=@workspace/swebtools",
+    "build:main": "npm run build --workspace=@workspace/swebtools",
+    "build:main:direct": "cd artifacts/swebtools && npx vite build --config vite.config.ts",
     "typecheck:libs": "tsc --build",
     "typecheck": "npm run typecheck:libs",
     "dev": "npm --workspace=@workspace/swebtools run dev",
@@ -25,5 +27,8 @@
   "devDependencies": {
     "prettier": "^3.8.3",
     "typescript": "~5.9.3"
+  },
+  "dependencies": {
+    "once": "^1.4.0"
   }
 }

@@ -25,6 +25,9 @@ FROM nginx:alpine AS runner
 # Important: Vite outputs to dist/public, not dist
 COPY --from=builder /app/artifacts/swebtools/dist/public /usr/share/nginx/html
 
+# Copy a custom nginx configuration that supports SPA routes
+COPY --from=builder /app/artifacts/swebtools/public/nginx.conf /etc/nginx/conf.d/default.conf
+
 # Expose HTTP port
 EXPOSE 80
 

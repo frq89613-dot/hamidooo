@@ -35,10 +35,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-6">{t('footer.nav')}</h4>
             <ul className="flex flex-col gap-4 text-muted-foreground">
-              <li><a href="#services" className="hover:text-primary transition-colors">{t('nav.services')}</a></li>
-              <li><a href="#portfolio" className="hover:text-primary transition-colors">{t('nav.portfolio')}</a></li>
-              <li><a href="#tech" className="hover:text-primary transition-colors">{t('nav.techStack')}</a></li>
-              <li><a href="#stats" className="hover:text-primary transition-colors">{t('nav.stats')}</a></li>
+              <li><a href="/services" className="hover:text-primary transition-colors">{t('nav.services')}</a></li>
+              <li><a href="/why-sweb" className="hover:text-primary transition-colors">{t('nav.whyUs')}</a></li>
+              <li><a href="/use-cases" className="hover:text-primary transition-colors">{t('nav.useCases')}</a></li>
+              <li><a href="/case-studies" className="hover:text-primary transition-colors">{t('nav.caseStudies')}</a></li>
+              <li><a href="/blog" className="hover:text-primary transition-colors">Blog</a></li>
+              <li><a href="/tools" className="hover:text-primary transition-colors">Tools</a></li>
             </ul>
           </div>
 

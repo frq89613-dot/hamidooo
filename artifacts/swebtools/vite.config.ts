@@ -11,7 +11,7 @@ if (Number.isNaN(port) || port <= 0) {
   throw new Error(`Invalid PORT value: "${rawPort}"`);
 }
 
-const basePath = process.env.BASE_PATH ?? "/";
+const basePath = process.env.NODE_ENV === "production" ? "./" : "/";
 
 export default defineConfig({
   base: basePath,
@@ -42,8 +42,22 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    // Force Rollup (pure JS) instead of Rolldown (Rust native binaries)
+    // This avoids Windows AppControl policy blocking .node files
+    ssr: false,
+    rollupOptions: {
+      output: {
+        dir: path.resolve(import.meta.dirname, "dist"),
+        format: "es",
+      },
+    },
+  },
+  // Force Vite to use Rollup instead of Rolldown
+  // Set experimental.withBundledRolldown to false to disable Rolldown
+  experimental: {
+    withBundledRolldown: false,
   },
   server: {
     port,

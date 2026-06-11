@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://swebtools.com/sitemap.xml
+Sitemap: https://sweb.tools/sitemap.xml
 
 # Supported locale paths
 Allow: /en

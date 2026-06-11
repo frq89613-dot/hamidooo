@@ -28,9 +28,12 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('nav.services'), href: isHome ? '#services' : '/services', route: '/services' },
-    { name: t('nav.portfolio'), href: isHome ? '#portfolio' : '/portfolio', route: '/portfolio' },
+    { name: t('nav.whyUs'), href: '/why-sweb', route: '/why-sweb' },
+    { name: t('nav.useCases'), href: '/use-cases', route: '/use-cases' },
+    { name: t('nav.caseStudies'), href: '/case-studies', route: '/case-studies' },
+    { name: 'Blog', href: '/blog', route: '/blog' },
     { name: 'Pricing', href: '/pricing', route: '/pricing' },
-    { name: t('nav.techStack'), href: isHome ? '#tech' : '/#tech', route: '/' },
+    { name: 'Tools', href: '/tools', route: '/tools' },
   ];
 
   return (
